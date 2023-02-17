@@ -5,3 +5,27 @@ config BOARD_ENABLE_DCDC
 	select SOC_DCDC_NRF52X
 	default y
 	depends on BOARD_BT65
+
+config ZMK_BACKLIGHT_AUTO_OFF_IDLE
+	bool "Turn off backlight when keyboard goes into idle state"
+	default y
+	
+config ZMK_RGB_UNDERGLOW_AUTO_OFF_IDLE
+	bool "Turn off RGB underglow when keyboard goes into idle state"
+	default y
+	
+config ZMK_IDLE_TIMEOUT
+	int "Milliseconds of inactivity before entering idle state (OLED shutoff, etc)"
+	default 300000
+	
+config ZMK_SLEEP
+	bool "Enable deep sleep support"
+	default y
+	
+config ZMK_IDLE_SLEEP_TIMEOUT
+	int "Milliseconds of inactivity before entering deep sleep"
+	default 600000
+	
+config ZMK_EXT_POWER
+	bool "Enable support to control external power output"
+	default y
